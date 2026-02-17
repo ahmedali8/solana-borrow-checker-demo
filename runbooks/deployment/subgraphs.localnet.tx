@@ -1,0 +1,18 @@
+
+action "counter_counter_initialized" "svm::deploy_subgraph" {
+    program_id = action.deploy_counter.program_id
+    program_idl = action.deploy_counter.program_idl
+    block_height = 0 // action.deploy_counter.block_height
+    event {
+        name = "CounterInitialized"
+    }
+}
+
+action "counter_counter_updated" "svm::deploy_subgraph" {
+    program_id = action.deploy_counter.program_id
+    program_idl = action.deploy_counter.program_idl
+    block_height = 0 // action.deploy_counter.block_height
+    event {
+        name = "CounterUpdated"
+    }
+}

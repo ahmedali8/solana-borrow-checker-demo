@@ -1,0 +1,27 @@
+# Anchor
+.anchor
+docker-target
+target
+test-ledger
+**/*.rs.bk
+/idls/types
+/build/localnet
+
+# Surfpool
+.surfpool
+
+# Node.js
+dist
+.npm
+.pnp.*
+bun.lockb
+node_modules
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Misc
+*.env
+*.local.json
+.DS_Store
+.history
