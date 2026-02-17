@@ -1,8 +1,8 @@
+import { beforeEach, describe, expect, it } from "bun:test";
 import * as anchor from "@coral-xyz/anchor";
 import { type Program } from "@coral-xyz/anchor";
 import { type Keypair } from "@solana/web3.js";
 import { fromWorkspace, LiteSVMProvider } from "anchor-litesvm";
-import { expect } from "chai";
 import { Clock } from "litesvm";
 import { decrementCounterIx } from "../scripts/instructions/decrement";
 import { incrementCounterIx } from "../scripts/instructions/increment";
@@ -40,7 +40,7 @@ describe("counter", () => {
 
     // Verify state
     const account = await program.account.counter.fetch(counter);
-    expect(account.count.toNumber()).to.equal(0);
+    expect(account.count.toNumber()).toBe(0);
 
     // Verify event
     assertEvent(provider, txSig, "CounterInitialized", {
@@ -62,7 +62,7 @@ describe("counter", () => {
 
     // Verify state
     const account = await program.account.counter.fetch(counter);
-    expect(account.count.toNumber()).to.equal(1);
+    expect(account.count.toNumber()).toBe(1);
 
     // Verify event
     assertEvent(provider, txSig, "CounterUpdated", {
@@ -87,7 +87,7 @@ describe("counter", () => {
 
     // Verify state
     const account = await program.account.counter.fetch(counter);
-    expect(account.count.toNumber()).to.equal(3);
+    expect(account.count.toNumber()).toBe(3);
   });
 
   it("decrements the counter", async () => {
@@ -107,7 +107,7 @@ describe("counter", () => {
 
     // Verify state
     const account = await program.account.counter.fetch(counter);
-    expect(account.count.toNumber()).to.equal(1);
+    expect(account.count.toNumber()).toBe(1);
 
     // Verify event
     assertEvent(provider, txSig, "CounterUpdated", {

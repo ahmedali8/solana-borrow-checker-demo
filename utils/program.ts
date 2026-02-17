@@ -6,7 +6,7 @@ import { type Counter } from "../target/types/counter";
 
 /**
  * Reads an IDL file from the project root and returns it as a anchor.Idl object
- * @param jsonPath - The path to the IDL file from the project root e.g. "target/idl/raydium_vault.json"
+ * @param jsonPath - The path to the IDL file from the project root e.g. "target/idl/counter.json"
  * @returns The IDL file
  */
 export function readIdl<T extends anchor.Idl>(jsonPath: string): T {

@@ -31,11 +31,11 @@ alias v := versions
 [group("test")]
 test: test-litesvm
 
-# Run litesvm tests (optionally specify a test file, e.g., 'just test-litesvm counter' or 'just test-litesvm counter --grep "count"')
+# Run litesvm tests (optionally specify a test file, e.g., 'just test-litesvm counter' or 'just test-litesvm counter --test-name-pattern "count"')
 [group("test")]
-test-litesvm file="**/*" *args="":
-    anchor build
-    bun run ts-mocha -t 1000000 -p ./tsconfig.json "tests/{{ file }}.test.ts" {{ args }}
+test-litesvm file="" *args="":
+    @anchor build
+    @bun test {{ if file == "" { "" } else { "tests/" + file + ".test.ts" } }} {{ args }}
 
 # ---------------------------------------------------------------------------- #
 #                                 INSTRUCTIONS                                 #

@@ -50,7 +50,7 @@ Run `just` to get all available commands.
 ## Surfnet - Deploy and use program locally
 
 ```bash
-# build vault program using local env
+# build program using local env
 cp .env.example .env
 just build
 
